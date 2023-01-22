@@ -40,6 +40,7 @@
         public int like_count { get; set; }
         public string permalink { get; set; }
         public string caption { get; set; }
+        public string thumbnail_url { get; set; }
     }
 
     public class Owner
