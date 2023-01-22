@@ -1,5 +1,36 @@
-﻿<h3>InstaFlux</h3>
+﻿<MudContainer MaxWidth=MaxWidth.ExtraLarge Class="py-5">
 
-@code {
+    <MudText Typo=Typo.subtitle1 Class="d-flex align-center justify-center text-white py-8" Style="font-weight:bold">
+        CONTACTEZ MOI
+    </MudText>
 
-}
+    <MudGrid Class="justify-center">
+        @foreach (var item in Medias)
+        {
+            <MudItem xs=12 sm=12 lg=3>
+                <MudLink Href="@item.permalink" Target="_blank">
+
+                    @if (item.media_type == "VIDEO")
+                    {
+                        <MudCard Class="pa-0">
+                            <MudCardContent Class="pa-0" Style="background-color:#145572;">
+                                <video height="450" controls="" class="pa-0" style="width:100%" >
+                                    <source src="@item.media_url" type="video/mp4">Your browser does not support the video tag.
+                                </video>
+                            </MudCardContent>
+                        </MudCard>
+                    }
+                    else
+                    {
+                        <MudCard>
+                            <MudCardMedia Image="@item.media_url" Height="450" />
+                        </MudCard>
+                    }
+                </MudLink>
+            </MudItem>
+        }
+
+    </MudGrid>
+
+
+</MudContainer>

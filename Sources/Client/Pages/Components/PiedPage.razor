@@ -1,5 +1,29 @@
-﻿<h3>PiedPage</h3>
+﻿<MudContainer MaxWidth=MaxWidth.Large Class="pa-16 text-white align-content-start ">
+    <MudGrid>
 
-@code {
 
-}
+        <MudItem xs=12 sm=12 lg=6 Class="d-flex align-center justify-center">
+            <h4 class="text-uppercase">Localisation</h4>
+        </MudItem>
+
+        <MudItem xs=12 sm=12 lg=6 Class="d-flex align-center justify-center">
+            <h4 class="text-uppercase">Mes réseaux sociaux</h4>
+        </MudItem>
+
+        <MudItem xs=12 sm=12 lg=6 Class="d-flex align-center justify-center">
+            <p>Bourgogne, France</p>
+        </MudItem>
+
+        <MudItem xs=12 sm=12 lg=6 Class="d-flex align-center justify-center">
+            <MudStack Row=true>
+                <MudLink Href="https://www.facebook.com/atelier.cremazie" Target="_blank">
+                    <MudIcon Icon="@Icons.Custom.Brands.Facebook" Size="Size.Large" Style="color:white" />
+                </MudLink>
+                <MudLink Href="https://www.instagram.com/atelier.cremazie/" Target="_blank">
+                    <MudIcon Icon="@Icons.Custom.Brands.Instagram" Size="Size.Large" Style="color:white" />
+                </MudLink>
+            </MudStack>
+        </MudItem>
+
+    </MudGrid>
+</MudContainer>
