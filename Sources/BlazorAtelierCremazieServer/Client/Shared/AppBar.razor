@@ -1,0 +1,32 @@
+﻿<MudAppBar Elevation="1">
+    <MudLink Typo="Typo.h1" Class="text-white" Href="/" Underline="Underline.None">Atelier Crémazie</MudLink>
+
+    <MudSpacer />
+
+    <MudLink Class="text-white ml-7 lg-screen" Href="#vitrine" Underline="Underline.None">Vitrine</MudLink>
+    <MudLink Class="text-white ml-7 lg-screen" Href="/point-de-vente" Underline="Underline.None">Points de vente</MudLink>
+    <MudLink Class="text-white ml-7 lg-screen" Href="#collections" Underline="Underline.None">Collection</MudLink>
+    <MudLink Class="text-white ml-7 lg-screen" Href="#contact" Underline="Underline.None">Contact</MudLink>
+
+    <MudIconButton Class="sm-screen" Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.End" OnClick="@ToggleDrawer" />
+</MudAppBar>
+
+<MudDrawer @bind-Open="@open" Variant="DrawerVariant.Temporary" Anchor="Anchor.Bottom" Elevation="0" Style="background-color: #0F3F59;">
+    <MudNavMenu>
+        <MudNavLink Class="text-white" Href="#vitrine">Vitrine</MudNavLink>
+        <MudNavLink Class="text-white" Href="/point-de-vente">Points de vente</MudNavLink>
+        <MudNavLink Class="text-white" Href="#collections">Collection</MudNavLink>
+        <MudNavLink Class="text-white" Href="#contact">Contact</MudNavLink>
+    </MudNavMenu>
+</MudDrawer>
+
+
+@code {
+    bool open = false;
+
+
+    void ToggleDrawer()
+    {
+        open = !open;
+    }
+}

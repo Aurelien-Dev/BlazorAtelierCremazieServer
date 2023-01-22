@@ -1,0 +1,72 @@
+﻿@font-face {
+    font-family: 'MyWebFont';
+    src: url("/fonts/brush.ttf") format("truetype");
+}
+
+.text-uppercase {
+    text-transform: uppercase !important;
+    font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.text-white {
+    color: #fff !important;
+}
+
+.bg-primary {
+    background-color: #0F3F59;
+}
+
+.bg-section {
+    background-color: #145572;
+}
+
+.banniere {
+    background-image: url("/assets/img/back.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+@media (min-width: 0px) and (max-width: 769px) {
+    .mud-typography-h1 {
+        font-size: 2rem !important;
+    }
+
+    .lg-screen {
+        display: none;
+    }
+
+    .sm-screen {
+        display: block;
+    }
+
+    .banniere {
+        background-position-y: 0px;
+    }
+}
+
+
+@media (min-width: 769px) {
+    .mud-typography-h1 {
+        font-size: 2.5rem !important;
+    }
+
+    .lg-screen {
+        display: block;
+    }
+
+    .sm-screen {
+        display: none;
+    }
+
+    .banniere {
+        background-position-y: -150px;
+    }
+}
+
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .banniere {
+        background-position-y: -100px;
+    }
+}

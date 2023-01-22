@@ -1,0 +1,51 @@
+﻿/*.masthead[b-r9bct1ajof] {
+    padding-top: 340px;
+    background-image: url("/assets/img/back-mobile.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center -150px;
+}
+
+.masthead .masthead-heading[b-r9bct1ajof] {
+    font-size: 2.75rem;
+    line-height: 2.75rem;
+    font-family: "MyWebFont";
+    font-weight: 100 !important;
+}
+
+.masthead .masthead-subheading[b-r9bct1ajof] {
+    font-size: 1.25rem;
+    color: #fff;
+}
+
+.masthead .masthead-avatar[b-r9bct1ajof] {
+    width: 15rem;
+}
+
+@media (min-width: 426px) {
+    .masthead[b-r9bct1ajof] {
+        padding-top: 455px;
+        background-image: url("/assets/img/back.jpg");
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-position: left 0px;
+    }
+
+    .masthead .masthead-heading[b-r9bct1ajof] {
+        font-size: 4rem;
+        line-height: 3.5rem;
+        color: #fff;
+    }
+
+    .masthead .masthead-subheading[b-r9bct1ajof] {
+        font-size: 1.5rem;
+    }
+}
+
+
+@media (min-width: 1025px) {
+    .masthead[b-r9bct1ajof] {
+        background-position: left -150px;
+    }
+}
+*/

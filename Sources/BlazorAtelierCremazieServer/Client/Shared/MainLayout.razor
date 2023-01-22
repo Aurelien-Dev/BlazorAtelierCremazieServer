@@ -1,0 +1,46 @@
+﻿@inherits LayoutComponentBase
+
+<MudThemeProvider Theme="MyCustomTheme" />
+<MudDialogProvider />
+<MudSnackbarProvider />
+
+
+
+
+<MudLayout>
+
+    <AppBar />
+
+    <MudMainContent>
+        @Body
+    </MudMainContent>
+</MudLayout>
+
+@code {
+    MudTheme MyCustomTheme = new MudTheme()
+        {
+            Palette = new Palette()
+            {
+                AppbarBackground = "#0F3F59",
+            },
+            Typography = new Typography()
+            {
+                Subtitle1 = new Subtitle1()
+                {
+                    FontSize = "1.5rem",
+                    FontFamily = new[] { "Lato" }
+                },
+                Body1 = new Body1()
+                {
+                    FontFamily = new[] { "Lato", "Segoe UI", "Helvetica Neue", "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" }
+                },
+                H1 = new H1()
+                {
+                    FontFamily = new[] { "MyWebFont" },
+                    FontWeight = 100,
+                    FontSize = "3rem"
+                }
+            }
+
+        };
+}
