@@ -1,4 +1,6 @@
-﻿namespace BlazorAtelierCremazieServer.ServicesExterne
+﻿using BlazorAtelierCremazieServer.Commmon.CustomException;
+
+namespace BlazorAtelierCremazieServer.ServicesExterne
 {
     public class ServiceExterneBase
     {
@@ -28,6 +30,11 @@
             };
             using (var response = await httpClient.SendAsync(requestNewIp))
             {
+                if (response.StatusCode != System.Net.HttpStatusCode.OK)
+                {
+                    throw new ApiCallException($"{response.StatusCode} {response.RequestMessage}");
+                }
+
                 //response.EnsureSuccessStatusCode();
                 result = await response.Content.ReadAsStringAsync();
             }

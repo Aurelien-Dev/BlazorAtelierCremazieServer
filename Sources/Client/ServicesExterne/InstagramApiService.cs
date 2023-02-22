@@ -1,12 +1,11 @@
-﻿using BlazorAtelierCremazieServer.Models;
+﻿using BlazorAtelierCremazieServer.Commmon.CustomException;
+using BlazorAtelierCremazieServer.Models;
 using Newtonsoft.Json;
 
 namespace BlazorAtelierCremazieServer.ServicesExterne
 {
     public class InstagramApiService : ServiceExterneBase, IInstagramApiService
     {
-        //private string token = "IGQVJXZAGtqczc1SjRwQTk1X1NraDF4UVZAWT1pRT1N0bjlSdkhxdVFXLUsxMDY2cnJ0cExmQXJhMWJzZAXdOVHV1V05jck1iNDFjOWVOM0sxS3FNQ2dlbVpkWmdjS1VXMkNMZAkY1cUlB";
-
         /// <summary>
         /// Constructor
         /// </summary>
@@ -33,6 +32,10 @@ namespace BlazorAtelierCremazieServer.ServicesExterne
                 if (Feed == null || Feed.Data == null) return Enumerable.Empty<InstaPost>();
 
                 return Feed.Data;
+            }
+            catch (ApiCallException)
+            {
+                return Enumerable.Empty<InstaPost>();
             }
             catch (Exception)
             {

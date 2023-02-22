@@ -4,6 +4,7 @@
     {
         public InstaPost[] Data { get; set; }
     }
+
     public class InstaPost
     {
         public string id { get; set; }
