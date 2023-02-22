@@ -1,3 +1,5 @@
+using BlazorAtelierCremazieServer;
+using BlazorAtelierCremazieServer.ServicesExterne;
 using Microsoft.AspNetCore.Hosting.StaticWebAssets;
 using MudBlazor.Services;
 
@@ -9,6 +11,11 @@ StaticWebAssetsLoader.UseStaticWebAssets(builder.Environment, builder.Configurat
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddMudServices();
+
+builder.Services.AddSingleton<IInstagramApiService, InstagramApiService>();
+builder.Services.AddSingleton<EnvironementSingleton>();
+
+builder.Services.AddSingleton(sp => new HttpClient());
 
 var app = builder.Build();
 

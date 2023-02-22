@@ -5,38 +5,41 @@
     </MudText>
 
     <MudGrid Class="justify-center">
-        @foreach (var item in Medias)
+        @if (Posts != null)
         {
-            <MudItem xs=12 sm=12 lg=4>
-                <MudLink Href="@item.permalink" Target="_blank">
+            @foreach (var item in Posts)
+            {
+                <MudItem xs=12 sm=12 lg=4>
+                    <MudLink Href="@item.permalink" Target="_blank">
 
-                    @if (item.media_type == "VIDEO" && !string.IsNullOrEmpty(item.media_url))
-                    {
-                        <MudCard Class="pa-0">
-                            <MudCardContent Class="pa-0" Style="background-color:#145572;">
-                                <video height="@CardHeight" controls="" class="pa-0" style="width:100%; margin-bottom:-6px" >
-                                    <source src="@item.media_url" type="video/mp4">Your browser does not support the video tag.
-                                </video>
-                            </MudCardContent>
-                        </MudCard>
-                    }
-                    else
-                    {
-                        if (!string.IsNullOrEmpty(item.media_url))
+                        @if (item.media_type == "VIDEO" && !string.IsNullOrEmpty(item.media_url))
                         {
-                            <MudCard>
-                                <MudCardMedia Image="@item.media_url" Height="@CardHeight" />
+                            <MudCard Class="pa-0">
+                                <MudCardContent Class="pa-0" Style="background-color:#145572;">
+                                    <video height="@CardHeight" controls="" class="pa-0" style="width:100%; margin-bottom:-6px">
+                                        <source src="@item.media_url" type="video/mp4">Your browser does not support the video tag.
+                                    </video>
+                                </MudCardContent>
                             </MudCard>
                         }
                         else
                         {
-                            <MudCard>
-                                <MudCardMedia Image="@item.thumbnail_url" Height="@CardHeight" />
-                            </MudCard>
+                            if (!string.IsNullOrEmpty(item.media_url))
+                            {
+                                <MudCard>
+                                    <MudCardMedia Image="@item.media_url" Height="@CardHeight" />
+                                </MudCard>
+                            }
+                            else
+                            {
+                                <MudCard>
+                                    <MudCardMedia Image="@item.thumbnail_url" Height="@CardHeight" />
+                                </MudCard>
+                            }
                         }
-                    }
-                </MudLink>
-            </MudItem>
+                    </MudLink>
+                </MudItem>
+            }
         }
 
     </MudGrid>
