@@ -1,4 +1,6 @@
-﻿<MudContainer MaxWidth=MaxWidth.ExtraExtraLarge Style="background-color:white">
+﻿@using BlazorAtelierCremazieServer.ServicesExterne
+
+<MudContainer MaxWidth=MaxWidth.ExtraExtraLarge Style="background-color:white">
 
     <MudStack>
 
@@ -21,7 +23,7 @@
                             </MudCardContent>
 
                             <MudCardActions>
-                                <MudButton ButtonType="ButtonType.Submit" Variant="Variant.Filled" Color="Color.Primary" Class="ml-auto">Envoyer</MudButton>
+                                <MudButton Variant="Variant.Filled" Color="Color.Primary" Class="ml-auto" OnClick=SumbitFormContact>Envoyer</MudButton>
                             </MudCardActions>
                         </MudCard>
                     </MudItem>

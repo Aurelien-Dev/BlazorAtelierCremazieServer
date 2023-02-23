@@ -13,6 +13,7 @@ builder.Services.AddServerSideBlazor();
 builder.Services.AddMudServices();
 
 builder.Services.AddSingleton<IInstagramApiService, InstagramApiService>();
+builder.Services.AddSingleton<IEmailJsService, EmailJsService>();
 builder.Services.AddSingleton<EnvironementSingleton>();
 
 builder.Services.AddSingleton(sp => new HttpClient());

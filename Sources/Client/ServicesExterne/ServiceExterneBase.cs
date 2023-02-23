@@ -22,21 +22,20 @@ namespace BlazorAtelierCremazieServer.ServicesExterne
         {
             string result = string.Empty;
 
-            var requestNewIp = new HttpRequestMessage
+            var httpMessage = new HttpRequestMessage
             {
                 Method = method,
                 RequestUri = new Uri(uri),
                 Content = content
             };
-            using (var response = await httpClient.SendAsync(requestNewIp))
+            using (var response = await httpClient.SendAsync(httpMessage))
             {
+                result = await response.Content.ReadAsStringAsync();
+
                 if (response.StatusCode != System.Net.HttpStatusCode.OK)
                 {
-                    throw new ApiCallException($"{response.StatusCode} {response.RequestMessage}");
+                    throw new ApiCallException($"{response.StatusCode} {result}");
                 }
-
-                //response.EnsureSuccessStatusCode();
-                result = await response.Content.ReadAsStringAsync();
             }
 
             return result;

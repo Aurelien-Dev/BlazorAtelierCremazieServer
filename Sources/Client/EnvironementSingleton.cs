@@ -2,9 +2,18 @@
 {
     public class EnvironementSingleton
     {
-
         public string WebRootPath { get; set; } = default!;
         public string ContentRootPath { get; set; } = default!;
+
+
+        //Instagram
+        public const string VarInstagramApiToken = "InstagramApiToken";
+        //EmailJS
+        public const string VarEmailJsServiceId = "EmailJsServiceId";
+        public const string VarEmailJsTemplateId = "EmailJsTemplateId";
+        public const string VarEmailJsUserId = "EmailJsUserId";
+        public const string VarEmailJsAccessToken = "EmailJsAccessToken";
+
 
         public bool IsInDev()
         {
@@ -19,7 +28,12 @@
 
         public string GetInstaToken()
         {
-            return Environment.GetEnvironmentVariable("InstagramApiToken", EnvironmentVariableTarget.Machine);
+            return Environment.GetEnvironmentVariable(VarInstagramApiToken, EnvironmentVariableTarget.Machine);
+        }
+
+        internal object GetEnvironmentVariable(string variable)
+        {
+            return Environment.GetEnvironmentVariable(variable, EnvironmentVariableTarget.Machine);
         }
     }
 }

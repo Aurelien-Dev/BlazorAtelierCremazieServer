@@ -1,18 +1,35 @@
-﻿namespace BlazorAtelierCremazieServer.Pages.Components
+﻿using BlazorAtelierCremazieServer.ServicesExterne;
+using Microsoft.AspNetCore.Components;
+using MudBlazor;
+
+namespace BlazorAtelierCremazieServer.Pages.Components
 {
     public partial class MeContacter
     {
-        public ContactForm contact { get; set; } = new();
-        public bool success { get; set; }
+        [Inject] public IEmailJsService EmailJsService { get; set; }
+        [Inject] public ISnackbar Snackbar { get; set; }
 
-        private void OnValidSubmit()
+        public Contact contact { get; set; } = new();
+        
+        public async Task SumbitFormContact()
         {
-            success = true;
-            StateHasChanged();
+            bool mailSending = await EmailJsService.SendEmailJs(contact);
+
+            Snackbar.Clear();
+            Snackbar.Configuration.PositionClass = Defaults.Classes.Position.BottomCenter;
+            Snackbar.Configuration.SnackbarVariant = Variant.Text;
+
+
+            if (mailSending)
+            {
+                Snackbar.Add("L'email a bien été envoyé.", Severity.Success);
+                contact = new Contact();
+            }
+            else Snackbar.Add("Erreur dans l'envoie du mail. Vous pouvez me contacter directement a mon adresse : atelier.cremazie@gmail.com", Severity.Warning);
         }
     }
 
-    public class ContactForm
+    public class Contact
     {
         public string? Name { get; set; }
         public string? Email { get; set; }
