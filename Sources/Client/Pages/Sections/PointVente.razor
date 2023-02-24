@@ -27,10 +27,14 @@
                 Toutes mes poteries sont en ventes chez Sandrine Decamps Coifure, hésitez pas à passer au salon si vous
                 souhaitez faire des achats<br>
                 Je peux également prendre des commandes, dans ce cas veuillez m'evoyer un message via le formulaire de
-                <a href="#contact">contact</a>.
+                <MudLink Underline=Underline.None Class="profile-bio" Style="color:white;" OnClick="@(() => Scroll("contact"))">contact</MudLink>.
             </p>
 
-            <br />
+            <MudStack Justify=Justify.Center Row=true>
+                <MudImage Src="assets/img/Sandrine.jpg" Elevation="25" Class="rounded-lg my-5 justify-center" Width=400 ObjectFit="ObjectFit.ScaleDown" />
+            </MudStack>
+
+
 
             <!-- About Section Content-->
             <div class="text-center map" style="height:500px">
@@ -43,3 +47,12 @@
     </MudStack>
 </MudContainer>
 
+@code {
+    [Inject]
+    protected IJSRuntime JSRuntime { get; set; } = null!;
+
+    public void Scroll(string id)
+    {
+        JSRuntime.InvokeVoidAsync("scroll", id);
+    }
+}
