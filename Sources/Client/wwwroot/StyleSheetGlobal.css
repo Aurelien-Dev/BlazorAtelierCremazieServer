@@ -12,6 +12,10 @@
     color: #fff !important;
 }
 
+.text-bluenavy {
+    color: #0F3F59;
+}
+
 .bg-primary {
     background-color: #0F3F59;
 }
@@ -70,3 +74,69 @@
         background-position-y: -100px;
     }
 }
+
+
+.profile-bio {
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1.5;
+    margin-top: 2.3rem;
+}
+
+
+.text-center {
+    text-align: center !important;
+}
+
+
+.page-section {
+    padding: 40px 0px 20px 0px;
+}
+
+    .page-section .page-section-heading {
+        font-size: 2.25rem;
+    }
+
+@media (min-width: 992px) {
+    .page-section .page-section-heading {
+        font-size: 2rem;
+    }
+}
+
+.divider-custom {
+    margin: 20px 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    .divider-custom .divider-custom-line {
+        width: 100%;
+        max-width: 7rem;
+        height: 0.25rem;
+        background-color: #0F3F59;
+        border-radius: 1rem;
+        border-color: #0F3F59;
+    }
+
+        .divider-custom .divider-custom-line:first-child {
+            margin-right: 1rem;
+        }
+
+        .divider-custom .divider-custom-line:last-child {
+            margin-left: 1rem;
+        }
+
+    .divider-custom .divider-custom-icon {
+        color: #0F3F59;
+        font-size: 2rem;
+    }
+
+    .divider-custom.divider-light .divider-custom-line {
+        background-color: #fff;
+    }
+
+    .divider-custom.divider-light .divider-custom-icon {
+        color: #fff;
+    }

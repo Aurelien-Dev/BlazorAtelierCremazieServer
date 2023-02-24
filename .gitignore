@@ -76,3 +76,4 @@ _[Ss]cripts
 *.nupkg
 *.ncrunchsolution
 *.dot[Cc]over
+/Sources/Client/Shared/AppBar.razor.cs

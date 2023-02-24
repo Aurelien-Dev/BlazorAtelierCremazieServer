@@ -7,6 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Shared\AppBar.razor.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Shared\AppBar.razor.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="MudBlazor" Version="6.1.9" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
   </ItemGroup>

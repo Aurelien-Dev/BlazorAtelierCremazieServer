@@ -1,4 +1,4 @@
-﻿using BlazorAtelierCremazieServer.Pages.Components;
+﻿using BlazorAtelierCremazieServer.Pages.Sections;
 
 namespace BlazorAtelierCremazieServer.ServicesExterne
 {

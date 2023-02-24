@@ -1,0 +1,45 @@
+﻿@using BlazorAtelierCremazieServer.ServicesExterne
+
+<MudContainer id="pointvente" MaxWidth=MaxWidth.ExtraExtraLarge Style="background-color:white">
+
+    <MudStack>
+
+        <!-- emaux & terre Section-->
+        <section class="page-section mb-0" id="collections">
+            <div class="container">
+                <!-- About Section Heading-->
+                <h2 class="page-section-heading text-center text-uppercase text-bluenavy">POINT DE VENTE</h2>
+                <!-- Icon Divider-->
+                <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+            </div>
+        </section>
+
+
+        <MudContainer MaxWidth=MaxWidth.Large>
+            <MudText Typo=Typo.subtitle1 Class="d-flex align-center justify-center text-bluenavy" Style="font-weight:bold">
+                Sandrine Decamp Coiffure
+            </MudText>
+            <p class="profile-bio">
+                Toutes mes poteries sont en ventes chez Sandrine Decamps Coifure, hésitez pas à passer au salon si vous
+                souhaitez faire des achats<br>
+                Je peux également prendre des commandes, dans ce cas veuillez m'evoyer un message via le formulaire de
+                <a href="#contact">contact</a>.
+            </p>
+
+            <br />
+
+            <!-- About Section Content-->
+            <div class="text-center map" style="height:500px">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2705.907202862869!2d4.808699315605939!3d47.29661301733338!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f2819a02fa15ed%3A0x32cd42e802f4b4bd!2sSANDRINE%20DECAMP%20COIFFURE!5e0!3m2!1sfr!2sfr!4v1622800136515!5m2!1sfr!2sfr"
+                        style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+
+        </MudContainer>
+
+    </MudStack>
+</MudContainer>
+

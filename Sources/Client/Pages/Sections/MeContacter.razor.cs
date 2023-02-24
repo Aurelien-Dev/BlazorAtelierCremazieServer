@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Components;
 using MudBlazor;
 
-namespace BlazorAtelierCremazieServer.Pages.Components
+namespace BlazorAtelierCremazieServer.Pages.Sections
 {
     public partial class MeContacter
     {

@@ -2,7 +2,7 @@
 using BlazorAtelierCremazieServer.ServicesExterne;
 using Microsoft.AspNetCore.Components;
 
-namespace BlazorAtelierCremazieServer.Pages.Components
+namespace BlazorAtelierCremazieServer.Pages.Sections
 {
     public partial class InstaFlux
     {

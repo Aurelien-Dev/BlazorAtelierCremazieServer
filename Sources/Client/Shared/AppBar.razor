@@ -3,25 +3,31 @@
 
     <MudSpacer />
 
-    <MudLink Class="text-white ml-7 lg-screen" Href="#vitrine" Underline="Underline.None">Vitrine</MudLink>
-    <MudLink Class="text-white ml-7 lg-screen" Href="/point-de-vente" Underline="Underline.None">Points de vente</MudLink>
-    <MudLink Class="text-white ml-7 lg-screen" Href="#collections" Underline="Underline.None">Collection</MudLink>
-    <MudLink Class="text-white ml-7 lg-screen" Href="#contact" Underline="Underline.None">Contact</MudLink>
+
+    <MudLink Class="text-white ml-7 lg-screen" Underline="Underline.None">
+        <button type="button" onclick="document.getElementById('vitrine').scrollIntoView({behavior:'smooth'})"> Vitrine</button>
+    </MudLink>
+    <MudLink Class="text-white ml-7 lg-screen" Underline="Underline.None">
+        <button type="button" onclick="document.getElementById('point-vente').scrollIntoView({behavior:'smooth'})">Points de vente</button>
+    </MudLink>
+    <MudLink Class="text-white ml-7 lg-screen" Underline="Underline.None">
+        <button type="button" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Contact</button>
+    </MudLink>
 
     <MudIconButton Class="sm-screen" Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.End" OnClick="@ToggleDrawer" />
 </MudAppBar>
 
 <MudDrawer @bind-Open="@open" Variant="DrawerVariant.Temporary" Anchor="Anchor.Bottom" Elevation="0" Style="background-color: #0F3F59;">
     <MudNavMenu>
-        <MudNavLink Class="text-white" Href="#vitrine">Vitrine</MudNavLink>
-        <MudNavLink Class="text-white" Href="/point-de-vente">Points de vente</MudNavLink>
-        <MudNavLink Class="text-white" Href="#collections">Collection</MudNavLink>
-        <MudNavLink Class="text-white" Href="#contact">Contact</MudNavLink>
+        <MudNavLink Class="text-white" OnClick="@(() => JSRuntime.InvokeVoidAsync("scroll","vitrine"))">Vitrine</MudNavLink>
+        <MudNavLink Class="text-white" OnClick="@(() => JSRuntime.InvokeVoidAsync("scroll","pointvente"))">Points de vente</MudNavLink>
+        <MudNavLink Class="text-white" OnClick="@(() => JSRuntime.InvokeVoidAsync("scroll","contact"))">Contact</MudNavLink>
     </MudNavMenu>
 </MudDrawer>
 
-
 @code {
+    [Inject]
+    protected IJSRuntime JSRuntime { get; set; } = null!;
     bool open = false;
 
 

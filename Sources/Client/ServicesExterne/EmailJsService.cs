@@ -1,6 +1,5 @@
 ﻿using BlazorAtelierCremazieServer.Commmon.CustomException;
-using BlazorAtelierCremazieServer.Models;
-using BlazorAtelierCremazieServer.Pages.Components;
+using BlazorAtelierCremazieServer.Pages.Sections;
 using Newtonsoft.Json;
 using System.Text;
 
