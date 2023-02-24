@@ -4,14 +4,14 @@
     <MudSpacer />
 
 
-    <MudLink Class="text-white ml-7 lg-screen" Underline="Underline.None">
-        <button type="button" onclick="document.getElementById('vitrine').scrollIntoView({behavior:'smooth'})"> Vitrine</button>
+    <MudLink Class="ml-7 lg-screen" Underline="Underline.None">
+        <MudButton Style="text-transform:none" Class="text-white" OnClick="@(() => Scroll("vitrine"))">Vitrine</MudButton>
     </MudLink>
     <MudLink Class="text-white ml-7 lg-screen" Underline="Underline.None">
-        <button type="button" onclick="document.getElementById('point-vente').scrollIntoView({behavior:'smooth'})">Points de vente</button>
+        <MudButton Style="text-transform:none" Class="text-white" OnClick="@(() => Scroll("pointvente"))">Points de vente</MudButton>
     </MudLink>
     <MudLink Class="text-white ml-7 lg-screen" Underline="Underline.None">
-        <button type="button" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Contact</button>
+        <MudButton Style="text-transform:none" Class="text-white" OnClick="@(() => Scroll("contact"))">Contact</MudButton>
     </MudLink>
 
     <MudIconButton Class="sm-screen" Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.End" OnClick="@ToggleDrawer" />
@@ -19,9 +19,9 @@
 
 <MudDrawer @bind-Open="@open" Variant="DrawerVariant.Temporary" Anchor="Anchor.Bottom" Elevation="0" Style="background-color: #0F3F59;">
     <MudNavMenu>
-        <MudNavLink Class="text-white" OnClick="@(() => JSRuntime.InvokeVoidAsync("scroll","vitrine"))">Vitrine</MudNavLink>
-        <MudNavLink Class="text-white" OnClick="@(() => JSRuntime.InvokeVoidAsync("scroll","pointvente"))">Points de vente</MudNavLink>
-        <MudNavLink Class="text-white" OnClick="@(() => JSRuntime.InvokeVoidAsync("scroll","contact"))">Contact</MudNavLink>
+        <MudNavLink Class="text-white" OnClick="@(() => Scroll("vitrine"))">Vitrine</MudNavLink>
+        <MudNavLink Class="text-white" OnClick="@(() => Scroll("pointvente"))">Points de vente</MudNavLink>
+        <MudNavLink Class="text-white" OnClick="@(() => Scroll("contact"))">Contact</MudNavLink>
     </MudNavMenu>
 </MudDrawer>
 
@@ -30,6 +30,10 @@
     protected IJSRuntime JSRuntime { get; set; } = null!;
     bool open = false;
 
+    public void Scroll(string id)
+    {
+        JSRuntime.InvokeVoidAsync("scroll", id);
+    }
 
     void ToggleDrawer()
     {
