@@ -49,16 +49,6 @@
         }
     </script>
     <script src="_framework/blazor.server.js" async></script>
-    <script>
-        Blazor.start({
-            configureSignalR: function (builder) {
-                builder.withUrl("/_blazor", {
-                    skipNegotiation: true,
-                    transport: 1
-                });
-            }
-        });
-    </script>
     <script src="_content/MudBlazor/MudBlazor.min.js" async></script>
     <script src="layout.js" async></script>
 </body>
