@@ -14,9 +14,9 @@
     <base href="~/" />
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-    
+
     <!-- Google fonts-->
-    
+
 
     <link rel="preload" href="https://fonts.googleapis.com/css?family=Montserrat:400,700" as="font" type="font/format" crossorigin>
     <link rel="preload" href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" as="font" type="font/format" crossorigin>
@@ -44,12 +44,21 @@
         <a class="dismiss">🗙</a>
     </div>
     <script>
-        function scroll(id)
-        {
-            document.getElementById(id).scrollIntoView({behavior:'smooth'})
+        function scroll(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' })
         }
     </script>
     <script src="_framework/blazor.server.js" async></script>
+    <script>
+        Blazor.start({
+            configureSignalR: function (builder) {
+                builder.withUrl("/_blazor", {
+                    skipNegotiation: true,
+                    transport: 1
+                });
+            }
+        });
+    </script>
     <script src="_content/MudBlazor/MudBlazor.min.js" async></script>
     <script src="layout.js" async></script>
 </body>
