@@ -23,14 +23,14 @@
                     <MudItem xs=12 sm=12 lg=12>
                         <MudCard Elevation=0>
                             <MudCardContent>
-                                <MudTextField Label="Nom / Prénom" @bind-Value="contact.Name" For="@(() => contact.Name)" />
-                                <MudTextField Label="Email" Class="mt-3" @bind-Value="contact.Email" For="@(() => contact.Email)" />
-                                <MudTextField Label="Numéro de téléphone" Class="mt-3" @bind-Value="contact.Telephone" For="@(() => contact.Telephone)" />
-                                <MudTextField Label="Message" Class="mt-3" @bind-Value="contact.Message" For="@(() => contact.Message)" Lines=5 />
+                                <MudTextField Label="Nom / Prénom" @bind-Value="contact.Name" For="@(() => contact.Name)" aria-label="Name" />
+                                <MudTextField Label="Email" Class="mt-3" @bind-Value="contact.Email" For="@(() => contact.Email)" aria-label="Email" />
+                                <MudTextField Label="Numéro de téléphone" Class="mt-3" @bind-Value="contact.Telephone" For="@(() => contact.Telephone)" aria-label="Telephone" />
+                                <MudTextField Label="Message" Class="mt-3" @bind-Value="contact.Message" For="@(() => contact.Message)" Lines=5 aria-label="Message" />
                             </MudCardContent>
 
                             <MudCardActions>
-                                <MudButton Variant="Variant.Filled" Color="Color.Primary" Class="ml-auto" OnClick=SumbitFormContact>Envoyer</MudButton>
+                                <MudButton Variant="Variant.Filled" Color="Color.Primary" Class="ml-auto" OnClick=SumbitFormContact aria-label="Envoyer le message">Envoyer</MudButton>
                             </MudCardActions>
                         </MudCard>
                     </MudItem>

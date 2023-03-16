@@ -5,16 +5,16 @@
 
 
     <MudLink Class="ml-7 lg-screen" Underline="Underline.None">
-        <MudButton Style="text-transform:none" Class="text-white" OnClick="@(() => Scroll("vitrine"))">Vitrine</MudButton>
+        <MudButton Style="text-transform:none" Class="text-white" OnClick="@(() => Scroll("vitrine"))" aria-label="Vitrine">Vitrine</MudButton>
     </MudLink>
     <MudLink Class="text-white ml-7 lg-screen" Underline="Underline.None">
-        <MudButton Style="text-transform:none" Class="text-white" OnClick="@(() => Scroll("pointvente"))">Points de vente</MudButton>
+        <MudButton Style="text-transform:none" Class="text-white" OnClick="@(() => Scroll("pointvente"))" aria-label="Points de vente">Points de vente</MudButton>
     </MudLink>
     <MudLink Class="text-white ml-7 lg-screen" Underline="Underline.None">
-        <MudButton Style="text-transform:none" Class="text-white" OnClick="@(() => Scroll("contact"))">Contact</MudButton>
+        <MudButton Style="text-transform:none" Class="text-white" OnClick="@(() => Scroll("contact"))" aria-label="Contact">Contact</MudButton>
     </MudLink>
 
-    <MudIconButton Class="sm-screen" Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.End" OnClick="@ToggleDrawer" />
+    <MudIconButton Class="sm-screen" Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.End" OnClick="@ToggleDrawer" aria-label="Drawer" />
 </MudAppBar>
 
 <MudDrawer @bind-Open="@open" Variant="DrawerVariant.Temporary" Anchor="Anchor.Bottom" Elevation="0" Style="background-color: #0F3F59;">
